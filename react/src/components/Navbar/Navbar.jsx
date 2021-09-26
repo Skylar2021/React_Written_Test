@@ -10,8 +10,8 @@ export default function Navbar({ handleLngChange,handleisLogin,isLogin,handleNam
     return (
         <nav>
             {isLogin && <NavLink handleLngChange={handleLngChange} handleisLogin={handleisLogin} handleNameChange={handleNameChange}/> }
-            <LngChangeButton handleLngChange={handleLngChange} lngCode="en" btnText="engButton" />
-            <LngChangeButton handleLngChange={handleLngChange} lngCode="can" btnText="canButton" />
+            {/* <LngChangeButton handleLngChange={handleLngChange} /> */}
+            {/* <LngChangeButton handleLngChange={handleLngChange} lngCode="can" btnText="canButton" /> */}
             
         </nav>
     )

@@ -9,7 +9,7 @@ export default function About() {
     return (
         <div>
             <h1>{t('aboutmePage.aboutmeTitle')}</h1>
-            <p class="self-intro">
+            <p className="self-intro">
                 {t('aboutmePage.text')}
             </p>
             <div style={ {width: '200px', height: '200px', backgroundImage: `url(${me})`, backgroundSize:'cover'}}></div>

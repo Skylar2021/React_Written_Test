@@ -1,28 +1,21 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import About from '../About/About';
-import Login from '../Login/Login';
 
-export default function NavLink({ handleisLogin, handleNameChange }) {
+export default function NavLink() {
     const { t } = useTranslation()
-    const resetLogInStatus = () => {
-        handleisLogin(false)
-    }
-    const resetGuestName = () =>{
-        handleNameChange(null)
-    }
+
     return (
         <div>
-            <Link to="/" exact
-                onClick={() => {
-                    resetLogInStatus();
-                    resetGuestName();
-                }}>
-                {t('link.logOut')}
+
+            <Link to="/home">
+            {t('link.home')}
             </Link>
             <Link to="/about-me">
                 {t('link.aboutMe')}
+            </Link>
+            <Link to="/setting">
+                {t('link.setting')}
             </Link>
 
         </div>

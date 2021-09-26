@@ -24,7 +24,7 @@ export default function Login({ handleNameChange, handleisLogin, name, handleLng
         if (name) {
             console.log(name)
             userLogin(true)
-            history.replace("/welcome");
+            history.replace("/home");
         } else {
             return false;
         }
@@ -37,19 +37,16 @@ export default function Login({ handleNameChange, handleisLogin, name, handleLng
                 <img src={logo} className="App-logo" alt="logo" />
                 <h1>{t('loginPage.loginTitle')}</h1>
                 <label htmlFor="name">{t('loginPage.text')}</label>
-                <br />
                 <input type="text" id="name" onChange={({ target }) => nameChanged(target)} required></input>
-                <br />
-                {name ? <button
+                <button
                     type="button"
                     value="Log in"
-                    onClick={() => isValidInput()}>
+                    onClick={() => isValidInput()}
+                    disabled={name ? false : true }
+                    >
                     {t('loginPage.loginBtn')}
-                </button> : ''}
-                <br />
-                {/* <button type="button" onClick={console.log('Click')}>Fan turbo on</button> */}
-                {/* <LngChangeButton handleLngChange={handleLngChange} lngCode="en" btnText="engButton" />
-            <LngChangeButton handleLngChange={handleLngChange} lngCode="can" btnText="canButton" /> */}
+                </button>
+            <LngChangeButton handleLngChange={handleLngChange} />
             </header>
         </div>
     );

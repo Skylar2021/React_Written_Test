@@ -13,6 +13,7 @@ import LngChangeButton from './components/LngChangeButton/LngChangeButton'
 import './i18n'
 import About from './components/About/About';
 import NF from './components/404NF/NF';
+import Setting from './components/Setting/Setting';
 
 
 
@@ -21,6 +22,7 @@ function App() {
 
     const handleLngChange = (code) => {
         i18n.changeLanguage(code)
+        return setLangCode(code)
     }
 
     const [guestName, setGuestName] = useState('');
@@ -32,6 +34,9 @@ function App() {
     const handleisLogin = (status) => {
         return setisLogin(status)
     }
+    const [isAble, setIsAble] = useState(false)
+
+    const [langCode, setLangCode] = useState('en')
 
     return (
         <>
@@ -41,30 +46,46 @@ function App() {
                 handleisLogin={handleisLogin}
                 handleNameChange={handleNameChange} />
 
-            <Switch>
-                <Route path="/welcome" exact>
-                    <Welcome
-                        guestName={guestName}
-                        handleLngChange={handleLngChange}
-                        isLogin={isLogin} />
-                </Route>
-                <Route path="/about-me">
-                    <About />
-                </Route>
 
-                <Route path="/" exact>
-                    <Login
-                        isLogin={isLogin}
-                        name={guestName}
-                        handleNameChange={handleNameChange}
-                        handleisLogin={handleisLogin}
-                        handleLngChange={handleLngChange} />
-                </Route>
-                <Route path="/">
-                    <NF />
-                </Route>
+            {isLogin ?
+                <>
+                    <Switch>
+                        <Route path="/home" >
+                            <Welcome
+                                guestName={guestName}
+                                handleLngChange={handleLngChange}
+                                isLogin={isLogin} />
+                        </Route>
+                        <Route path="/about-me">
+                            <About />
+                        </Route>
+                        <Route path="/setting">
+                            <Setting handleNameChange={handleNameChange} handleisLogin={handleisLogin} handleLngChange={handleLngChange} />
+                        </Route>
+                        <Route path="/">
+                            <NF />
+                        </Route>
+                    </Switch>
+                </>
+                :
+                <Switch>
+                    <Route path="/" exact>
+                        <Login
+                            isLogin={isLogin}
+                            name={guestName}
+                            handleNameChange={handleNameChange}
+                            handleisLogin={handleisLogin}
+                            handleLngChange={handleLngChange} />
+                    </Route>
+                    <Route path="/">
+                        <NF />
+                    </Route>
+                </Switch>
+            }
 
-            </Switch>
+
+
+
             {/* {isLogin ? <Main isLogin={isLogin} handleLngChange={handleLngChange} guestName={guestName} /> : <Login isLogin={isLogin} name={guestName} handleNameChange={handleNameChange} handleisLogin={handleisLogin} handleLngChange={handleLngChange} />} */}
         </>
     );
