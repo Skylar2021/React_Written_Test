@@ -1,15 +1,16 @@
-import './App.css';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Route, Switch } from 'react-router';
+import { Link, Redirect } from 'react-router-dom';
+
+import './App.css';
 import Login from './components/Login/Login';
 import Welcome from './components/Welcome/Welcome';
 import Main from './components/Main/Main';
 import Navbar from './components/Navbar/Navbar'
 import i18n from 'i18next';
-import { useTranslation } from 'react-i18next';
 import LngChangeButton from './components/LngChangeButton/LngChangeButton'
 import './i18n'
-import { Route, Switch } from 'react-router';
-import { Link, Redirect } from 'react-router-dom';
 import About from './components/About/About';
 import NF from './components/404NF/NF';
 
@@ -22,7 +23,7 @@ function App() {
         i18n.changeLanguage(code)
     }
 
-    const [guestName, setGuestName] = useState(null);
+    const [guestName, setGuestName] = useState('');
     const handleNameChange = (text) => {
         return setGuestName(text)
     }

@@ -25,6 +25,7 @@ const translationEn = {
     engButton: 'English',
     canButton: 'Cantonese'
 };
+
 const translationCan = {
     link: {
         aboutMe: '關於',
