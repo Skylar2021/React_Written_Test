@@ -2,18 +2,29 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 const translationEn = {
-    link: {
-        aboutMe: 'About',
-        logOut: 'Log Out'
+    tab: {
+        login: 'Log In',
+        home: 'Home',
+        gallery: 'Gallery',
+        setting: 'Setting',
     },
     loginPage: {
         loginTitle: 'Log In',
         loginBtn: 'Click to Log In',
-        text: 'Please enter your name'
+        text: 'Please enter your name',
     },
     welcomePage: {
-        welcome: 'Hello {{guestName}}~ Welcome to My Website!',
-        selfIntro: 'I am Skylar. I built this website with React.',
+        welcome: 'Welcome!',
+        selfIntro: 'Hello {{guestName}} I am Skylar. This is my first mobile application. I built this website with React Native.',
+        next:'Next',
+    },
+    galleryPage:{
+        text:'Find out more on my instagram',
+    },
+    settingPage: {
+        settingTitle: 'Setting',
+        logoutBtn: 'Log Out',
+        text: 'Are you sure to log out??',
     },
     aboutmePage: {
         aboutmeTitle: 'About Me',
@@ -23,31 +34,43 @@ const translationEn = {
         coding, reading, hiking, eating, listening to music, writing diary, travelling, movies...`
     },
     engButton: 'English',
-    canButton: 'Cantonese'
+    canButton: 'Cantonese',
 };
 
 const translationCan = {
-    link: {
-        aboutMe: '關於',
-        logOut: '登出'
+    tab: {
+        login: '登入',
+        home: '主頁',
+        gallery: '相片',
+        setting: '設定',
     },
     loginPage: {
         loginTitle: '登入',
         loginBtn: '按此登入',
-        text: '想我點稱呼你?'
+        text: '想我點稱呼你?',
     },
     welcomePage: {
-        welcome: '你好 {{guestName}}~ 歡迎你黎欣賞我嘅網頁！',
-        selfIntro: '我係Skylar， 呢個網頁係用React整。',
+        welcome: '歡迎你！',
+        selfIntro: '你好 {{guestName}}~ 我係Skylar，呢個手機應用程式係用React Navtive整，係我第一個嘅手機應用程式。',
+        next:'進入主畫面',
+    
+    },
+    galleryPage:{
+        text:'按此繼續欣賞我嘅創作',
+    },
+    settingPage: {
+        logoutTitle: '設定',
+        logoutBtn: '登出',
+        text: '真係走啦?',
     },
     aboutmePage: {
         aboutmeTitle: '關於我',
         text: `我係個友善有責任心嘅人，搵緊初級前端開發人員位置。我有一個抱負，希望我嘅工作能夠我嘅技能，成為推進社會積極進步嘅一個助力。
-        我鍾意影菲林相、打(無聊)機、打code、睇書、行山、食野、聽歌、寫日記、去旅行、睇電影...等等。`
+        我鍾意影菲林相、打(無聊)機、打code、睇書、行山、食野、聽歌、寫日記、去旅行、睇電影...等等。`,
 
     },
     engButton: '英文',
-    canButton: '廣東話'
+    canButton: '廣東話',
 };
 
 i18n
@@ -63,6 +86,5 @@ i18n
             escapeValue: false,
         },
     })
-
 
 export default i18n;
