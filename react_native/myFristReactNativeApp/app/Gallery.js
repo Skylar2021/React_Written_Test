@@ -4,7 +4,6 @@ import { Image, ScrollView, StyleSheet } from 'react-native'
 export default function Gallery() {
 	return (
 		<ScrollView>
-			{/* <Text>123</Text> */}
 			<Image style={styles.image} source={require('../assets/sunflower.jpg')} fadeDuration={1000} />
 			<Image style={styles.image} source={require('../assets/lightbulb.jpg')} fadeDuration={1000} />
 			<Image style={styles.image} source={require('../assets/tm_bridge.jpg')} fadeDuration={1000} />
