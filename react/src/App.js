@@ -1,20 +1,18 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route, Switch } from 'react-router';
-// import { Link, Redirect } from 'react-router-dom';
+import i18n from 'i18next';
 
 import './App.css';
 import Login from './components/Login/Login';
 import Welcome from './components/Welcome/Welcome';
-import Main from './components/Main/Main';
 import Navbar from './components/Navbar/Navbar'
 import LngChangeButton from './components/LngChangeButton/LngChangeButton'
-import i18n from 'i18next';
 import './i18n'
 import About from './components/About/About';
 import NF from './components/404NF/NF';
 import Setting from './components/Setting/Setting';
-// import bgImage from './img/seaside1.jpg'
+import Gallery from './components/Gallery/Gallery';
 
 
 
@@ -46,12 +44,11 @@ function App() {
 
             {isLogin ?
                 <div className="main-container">
-                    {/* <img className="bg-image" src={bgImage}/> */}
-                <Navbar
-                    isLogin={isLogin}
-                    handleLngChange={handleLngChange}
-                    handleisLogin={handleisLogin}
-                    handleNameChange={handleNameChange} />
+                    <Navbar
+                        isLogin={isLogin}
+                        handleLngChange={handleLngChange}
+                        handleisLogin={handleisLogin}
+                        handleNameChange={handleNameChange} />
                     <Switch>
                         <Route path="/home" >
                             <Welcome
@@ -62,6 +59,9 @@ function App() {
                         <Route path="/about-me">
                             <About />
                         </Route>
+                        {/* <Route path="/gallery">
+                            <Gallery />
+                        </Route> */}
                         <Route path="/setting">
                             <Setting handleNameChange={handleNameChange} handleisLogin={handleisLogin} handleLngChange={handleLngChange} />
                         </Route>
@@ -81,7 +81,7 @@ function App() {
                             handleLngChange={handleLngChange} />
                     </Route>
                     <Route path="/">
-                        <NF />
+                        <NF isLogin={isLogin}/>
                     </Route>
                 </Switch>
             }

@@ -1,8 +1,19 @@
-.App {
+.login-page {
   text-align: center;
 }
 
-.App-logo {
+.login-content {
+  background-color: #282c34;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.react-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -33,6 +44,7 @@
 
 }
 .input{
+  color: #282c34;
 	border-radius: 10px;
   text-align: center;
   height: 25px;
@@ -56,7 +68,9 @@
   border: inset;
   color: #282c34;
 }
-
+.guest-name{
+  font-style: italic;
+}
 nav.web-nav{
   background-color: #282c34;
 
@@ -104,26 +118,27 @@ nav.web-nav .nav-items{
   justify-content: center;
   align-items: center;
 }
+.error-page{
+  color: #282c34;
+  text-align: center;
+
+}
+
+.error-link{
+  color: #282c34;
+  text-align: center;
+  text-decoration: underline;
+}
+.error-link:hover{
+  color: #003eb9;
+}
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .react-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
