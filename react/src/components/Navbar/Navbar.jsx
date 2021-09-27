@@ -1,18 +1,24 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next';
-import LngChangeButton from '../LngChangeButton/LngChangeButton';
 import NavLink from '../NavLink/NavLink'
 
-
 export default function Navbar({ handleLngChange,handleisLogin,isLogin,handleNameChange }) {
-    const { t, i18n } = useTranslation();
+    const toggleNav = () => {
+        let toggle = document.querySelector('nav.web-nav').style
+        toggle.left = toggle.left === '0px' ? toggle.left = '-60%' : toggle.left = '0px';
+    }
 
     return (
-        <nav className="web-nav">
-            {isLogin && <NavLink handleLngChange={handleLngChange} handleisLogin={handleisLogin} handleNameChange={handleNameChange}/> }
-            {/* <LngChangeButton handleLngChange={handleLngChange} /> */}
-            {/* <LngChangeButton handleLngChange={handleLngChange} lngCode="can" btnText="canButton" /> */}
-            
+        <>
+        <nav className="mobile-nav">
+            <i className="fas fa-bars nav-icon" onClick={()=>toggleNav()}></i>
         </nav>
+        <nav className="web-nav">
+            {isLogin && <NavLink 
+                            toggleNav={toggleNav} 
+                            handleLngChange={handleLngChange} 
+                            handleisLogin={handleisLogin} 
+                            handleNameChange={handleNameChange}/> }
+        </nav>
+        </>
     )
 }
