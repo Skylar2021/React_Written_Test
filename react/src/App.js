@@ -4,21 +4,17 @@ import { Route, Switch } from 'react-router';
 import i18n from 'i18next';
 
 import './App.css';
+import './i18n'
 import Login from './components/Login/Login';
 import Welcome from './components/Welcome/Welcome';
 import Navbar from './components/Navbar/Navbar'
-import LngChangeButton from './components/LngChangeButton/LngChangeButton'
-import './i18n'
 import About from './components/About/About';
 import NF from './components/404NF/NF';
 import Setting from './components/Setting/Setting';
 import Gallery from './components/Gallery/Gallery';
 
-
-
-
 function App() {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
 
     const handleLngChange = (code) => {
         i18n.changeLanguage(code)
@@ -30,18 +26,15 @@ function App() {
         return setGuestName(text)
     }
 
-    const [isLogin, setisLogin] = useState(true)
+    const [isLogin, setisLogin] = useState(false)
     const handleisLogin = (status) => {
         return setisLogin(status)
     }
-    const [isAble, setIsAble] = useState(false)
 
     const [langCode, setLangCode] = useState('en')
 
     return (
         <>
-
-
             {isLogin ?
                 <div className="main-container">
                     <Navbar
@@ -85,11 +78,6 @@ function App() {
                     </Route>
                 </Switch>
             }
-
-
-
-
-            {/* {isLogin ? <Main isLogin={isLogin} handleLngChange={handleLngChange} guestName={guestName} /> : <Login isLogin={isLogin} name={guestName} handleNameChange={handleNameChange} handleisLogin={handleisLogin} handleLngChange={handleLngChange} />} */}
         </>
     );
 }
