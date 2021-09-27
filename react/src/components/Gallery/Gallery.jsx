@@ -13,32 +13,41 @@ import img4 from '../../img/tm_bridge.jpg'
 export default function Gallery() {
     const { t } = useTranslation()
     const images = [
-        img1,
-        img2,
-        img3,
-        img4
+        {
+            'image': img1,
+            'alt': 'lightbulb'
+        },
+        {
+            'image': img2,
+            'alt': 'sunflower'
+        },
+        {
+            'image': img3,
+            'alt': 'sunset'
+        },
+        {
+            'image': img4,
+            'alt': 'Tsing Ma Bridge'
+        },
     ];
     const zoomInProperties = {
         indicators: true,
-        // indicators: i => (<div className="indicator">{i + 1}</div>),
         scale: 1.4,
         autoplay: true,
     }
     return (
-        <div className="gallery">
+        <>
             <h1 className="title">{t('galleryPage.title')}</h1>
-            <Fade  {...zoomInProperties}>
-                {images.map((each, index) => (
+            <div className="gallery">
+                <Fade  {...zoomInProperties}>
+                    {images.map((each, index) => (
                     <div className="img-container" key={index} >
-                        <img className="photo" src={each} />
+                        <img className="photo" src={each['image']} alt={each['alt']} />
                     </div>
-                ))}
-            </Fade>
-            {/* <img className="photo" src={img1} alt="lightbulb" />
-            <img className="photo" src={img2} alt="sunflower" />
-            <img className="photo" src={img3} alt="sunset" />
-            <img className="photo" src={img4} alt="tsing ma bridge" /> */}
-
-        </div>
+                    ))}
+                </Fade>
+            </div>
+            <h5 className="gallery-text"><a href="https://instagram.com/sw_share?utm_medium=copy_link" target="_blank" rel='noreferrer noopener'>{t('galleryPage.text')}</a></h5>
+        </>
     )
 }

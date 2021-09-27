@@ -1,27 +1,40 @@
 @import "react-slideshow-image/dist/styles.css";
 .gallery{
-    padding: 0px 20px;
-    background-color: rgba(196, 182, 182, 0.486);
-    margin: 15px 20px;
+    padding: 15px 10px 0px;
+    background-color: rgba(196, 182, 182, 0.527);
     border-radius: 20px;
+    margin: 15px 20px;
 
 }
 
 .img-container{
-     /* display: block; */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin: auto; */
 }
 .photo{
-    width: 50vw;
+    width: 48vw;
     height: auto;
     background-color: white;
     padding: 10px;
-    border: 2px;
-    margin: 2px;
     z-index: 5;
+
+}
+
+.gallery-text{
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    background-color: rgba(196, 182, 182, 0.486);
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    padding: 3px;
+    margin: auto;
+}
+.gallery-text:hover{
+    background-color: #00ccff;
+
 
 }
 .indicators{
@@ -29,8 +42,24 @@
 }
 
 @media screen and (max-width: 950px) {
+    .gallery{
+        padding: 15px 10px 0px;
+        margin: 5px 10px;
+    }
+    .photo{
+        width: 65vw;
+        padding: 5px;
+        
+    }
+    .gallery-text{
+        position: static;
+
+
+    }
+}
+@media screen and (max-width: 650px) {
     .photo{
         width: 75vw;
-        padding: 5px;
+        
     }
 }
