@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 
 import Gallery from './app/Gallery'
+import About from './app/About'
 import i18next from './i18n.config';
 
 export default function App() {
@@ -23,7 +24,7 @@ export default function App() {
 		return setGuestName(text)
 	}
 
-	const [isLogin, setisLogin] = useState(false)
+	const [isLogin, setisLogin] = useState(true)
 	const handleisLogin = (status) => {
 		if (status) {
 			return setisLogin(status)
@@ -42,6 +43,17 @@ export default function App() {
 		}
 	}
 
+	// const About = ({titleText, selfIntro}) =>{
+	// 	return (
+	// 		<>
+	// 			<View style={styles.aboutContainer}>
+	// 				<Text style={styles.aboutTitle}>{titleText}</Text>
+	// 				<Text style={styles.aboutText}>{selfIntro}</Text>
+	// 			</View>
+	// 		</>
+	// 	)
+	// }
+
 	const MainContent = () => {
 		return (
 			<NavigationContainer>
@@ -49,10 +61,10 @@ export default function App() {
 					screenOptions={({ route }) => (
 						{
 							tabBarIcon: ({ focused, color, size }) => {
-								if (route.name === 'Gallery' || route.name === '相片') {
+								if (route.name === 'About' || route.name === '關於') {
 									return (
 										<Ionicons
-											name={focused ? 'albums' : 'albums-outline'}
+											name={focused ? 'person' : 'person-outline'}
 											size={size}
 											color={color}
 										/>
@@ -69,15 +81,10 @@ export default function App() {
 							tabBarActiveTintColor: '#0040D6',
 							tabBarInactiveTintColor: 'black',
 						})}>
-					<Tab.Screen name={t('tab.gallery')} >
+					
+					<Tab.Screen name={t('tab.about')} >
 						{props =>
-							<>
-								<Gallery {...props} />
-								<TouchableOpacity style={styles.galleryBottom} onPress={() => { Linking.openURL('https://instagram.com/sw_share?utm_medium=copy_link') }}>
-									<Text style={styles.galleryText}>{t('galleryPage.text')}</Text>
-									<Ionicons name="logo-instagram" size={20} color="#8a3ab9" />
-								</TouchableOpacity>
-							</>}
+							<About {...props} titleText={t('aboutmePage.title')} selfIntro={t('aboutmePage.text')}/>}
 					</Tab.Screen>
 					<Tab.Screen name={t('tab.setting')} >
 						{props =>
@@ -108,21 +115,21 @@ export default function App() {
 
 	return (
 		<SafeAreaView style={styles.mainContainer}>
-			{isLogin ?	isAble ?	<MainContent />	:	<WelcomePage />	
-			:
-			<View style={[styles.container, styles.loginBG]}>
-				<Text style={styles.loginTitle}>{t('loginPage.loginTitle')}</Text>
-				<Text style={styles.loginText}>{t('loginPage.text')}</Text>
-				<TextInput
-					value={guestName}
-					onChangeText={text => handleNameChange(text)}
-					style={styles.input} />
-				<TouchableOpacity style={styles.loginBtn} onPress={() => handleisLogin(true)} disabled={guestName ? false : true}>
-					<Ionicons name="log-in" size={28} color="white" />
-					<Text style={{ color: '#fff', fontWeight: 500 }}>{t('loginPage.loginTitle')}</Text>
-				</TouchableOpacity>
-				{!isLogin && LangBtn()}
-			</View>	}
+			{isLogin ? isAble ? <MainContent /> : <WelcomePage />
+				:
+				<View style={[styles.container, styles.loginBG]}>
+					<Text style={styles.loginTitle}>{t('loginPage.loginTitle')}</Text>
+					<Text style={styles.loginText}>{t('loginPage.text')}</Text>
+					<TextInput
+						value={guestName}
+						onChangeText={text => handleNameChange(text)}
+						style={styles.input} />
+					<TouchableOpacity style={styles.loginBtn} onPress={() => handleisLogin(true)} disabled={guestName ? false : true}>
+						<Ionicons name="log-in" size={28} color="white" />
+						<Text style={{ color: '#fff', fontWeight: '500' }}>{t('loginPage.loginTitle')}</Text>
+					</TouchableOpacity>
+					{!isLogin && LangBtn()}
+				</View>}
 		</SafeAreaView>
 	);
 }
@@ -144,7 +151,7 @@ const styles = StyleSheet.create({
 	},
 	loginTitle: {
 		fontSize: 25,
-		fontWeight: 'bolder',
+		fontWeight: '600',
 		margin: 10,
 		color: 'white',
 	},
@@ -164,7 +171,6 @@ const styles = StyleSheet.create({
 		paddingRight: 10,
 		backgroundColor: '#0040D6',
 		borderRadius: 5,
-		cursor: 'pointer',
 		width: 100,
 		height: 30,
 	},
@@ -182,7 +188,6 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 		justifyContent: 'center',
 		alignItems: 'center',
-		cursor: 'pointer',
 		paddingBottom: 3,
 		height: 30,
 		width: 100,
@@ -190,7 +195,7 @@ const styles = StyleSheet.create({
 	},
 	btnText: {
 		color: '#fff',
-		fontWeight: 500,
+		fontWeight: '500',
 	},
 	bgimage: {
 		flex: 1,
@@ -200,6 +205,21 @@ const styles = StyleSheet.create({
 	},
 	welcomeText: {
 		textAlign: 'center',
+		fontSize: 18,
+		backgroundColor: '#FFFFFF',
+		padding: 5,
+		borderRadius: 10,
+	},
+	aboutContainer:{
+		padding: 15,
+	},
+	aboutTitle:{
+		fontSize: 25,
+		fontWeight: '600',
+		margin: 10,
+		color: 'black',
+	},
+	aboutText:{
 		fontSize: 18,
 		backgroundColor: '#FFFFFF',
 		padding: 5,
