@@ -14,6 +14,9 @@ export default function NavLink() {
             <Link className="nav-item" to="/about-me">
                 {t('link.aboutMe')}
             </Link>
+            <Link className="nav-item" to="/gallery">
+                {t('link.gallery')}
+            </Link>
             <Link className="nav-item" to="/setting">
                 {t('link.setting')}
             </Link>

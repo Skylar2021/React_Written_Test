@@ -30,7 +30,7 @@ function App() {
         return setGuestName(text)
     }
 
-    const [isLogin, setisLogin] = useState(false)
+    const [isLogin, setisLogin] = useState(true)
     const handleisLogin = (status) => {
         return setisLogin(status)
     }
@@ -59,9 +59,9 @@ function App() {
                         <Route path="/about-me">
                             <About />
                         </Route>
-                        {/* <Route path="/gallery">
+                        <Route path="/gallery">
                             <Gallery />
-                        </Route> */}
+                        </Route>
                         <Route path="/setting">
                             <Setting handleNameChange={handleNameChange} handleisLogin={handleisLogin} handleLngChange={handleLngChange} />
                         </Route>

@@ -1,0 +1,36 @@
+@import "react-slideshow-image/dist/styles.css";
+.gallery{
+    padding: 0px 20px;
+    background-color: rgba(196, 182, 182, 0.486);
+    margin: 15px 20px;
+    border-radius: 20px;
+
+}
+
+.img-container{
+     /* display: block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: auto; */
+}
+.photo{
+    width: 50vw;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+    border: 2px;
+    margin: 2px;
+    z-index: 5;
+
+}
+.indicators{
+    color: white;
+}
+
+@media screen and (max-width: 950px) {
+    .photo{
+        width: 75vw;
+        padding: 5px;
+    }
+}
