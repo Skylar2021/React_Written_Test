@@ -7,7 +7,6 @@ const translationEn = {
         home: 'Home',
         gallery: 'Gallery',
         setting:'Setting',
-
     },
     loginPage: {
         loginTitle: 'Log In',
@@ -64,8 +63,8 @@ const translationCan = {
     },
     aboutmePage: {
         aboutmeTitle: '關於我',
-        text: `我係個友善有責任心嘅人，搵緊初級前端開發人員位置。我有一個抱負，希望我嘅工作能夠我嘅技能，成為推進社會積極進步嘅一個助力。
-        我鍾意影菲林相、打(無聊)機、打code、睇書、行山、食野、聽歌、寫日記、去旅行、睇電影...等等。`
+        text: `我係個友善有責任心嘅人，搵緊初級前端開發人員位置。我有一個抱負，希望我嘅工作能夠善用科技呢樣工具，成為推進社會積極進步嘅一個助力。
+        我鍾意影菲林相、打(唔算好無聊嘅)機、打code、睇書、行山、食野、聽歌、寫日記、去旅行、睇電影...等等。`
     },
     galleryPage:{
         title: '相片',
