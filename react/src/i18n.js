@@ -14,8 +14,8 @@ const translationEn = {
         text: 'Please enter your name'
     },
     welcomePage: {
-        welcome: 'Hello {{guestName}}~ Welcome to My Website!',
-        selfIntro: 'I am Skylar. I built this website with React.',
+        welcome: 'Welcome to My Website!',
+        selfIntro: 'Hello {{guestName}}~ I am Skylar. I built this website with React.',
     },
     aboutmePage: {
         aboutmeTitle: 'About Me',
@@ -43,8 +43,8 @@ const translationCan = {
         text: '想我點稱呼你?'
     },
     welcomePage: {
-        welcome: '你好 {{guestName}}~ 歡迎你黎欣賞我嘅網頁！',
-        selfIntro: '我係Skylar， 呢個網頁係用React整。',
+        welcome: '歡迎你黎欣賞我嘅網頁！',
+        selfIntro: '你好 {{guestName}}~ 我係Skylar， 呢個網頁係用React整。',
     },
     aboutmePage: {
         aboutmeTitle: '關於我',

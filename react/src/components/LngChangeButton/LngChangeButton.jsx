@@ -19,10 +19,10 @@ export default function LngChangeButton({handleLngChange}) {
     return (
         <>
         { currentLang === 'en'?
-        <button onClick={e=>changeLang(e)} value={'can'}>{t('canButton')}</button>
+        <button className="button" onClick={e=>changeLang(e)} value={'can'}>{t('canButton')}</button>
         
         :
-        <button onClick={e=>changeLang(e)} value={'en'}>{t('engButton')}</button>
+        <button className="button" onClick={e=>changeLang(e)} value={'en'}>{t('engButton')}</button>
          }
         </>
     )

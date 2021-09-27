@@ -6,15 +6,15 @@ export default function NavLink() {
     const { t } = useTranslation()
 
     return (
-        <div>
+        <div className="nav-items">
 
-            <Link to="/home">
-            {t('link.home')}
+            <Link className="nav-item" to="/home">
+                {t('link.home')}
             </Link>
-            <Link to="/about-me">
+            <Link className="nav-item" to="/about-me">
                 {t('link.aboutMe')}
             </Link>
-            <Link to="/setting">
+            <Link className="nav-item" to="/setting">
                 {t('link.setting')}
             </Link>
 

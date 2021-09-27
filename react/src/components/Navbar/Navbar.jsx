@@ -8,7 +8,7 @@ export default function Navbar({ handleLngChange,handleisLogin,isLogin,handleNam
     const { t, i18n } = useTranslation();
 
     return (
-        <nav>
+        <nav className="web-nav">
             {isLogin && <NavLink handleLngChange={handleLngChange} handleisLogin={handleisLogin} handleNameChange={handleNameChange}/> }
             {/* <LngChangeButton handleLngChange={handleLngChange} /> */}
             {/* <LngChangeButton handleLngChange={handleLngChange} lngCode="can" btnText="canButton" /> */}

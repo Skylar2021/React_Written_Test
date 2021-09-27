@@ -7,12 +7,14 @@ export default function About() {
     const { t } = useTranslation();
 
     return (
-        <div>
-            <h1>{t('aboutmePage.aboutmeTitle')}</h1>
-            <p className="self-intro">
-                {t('aboutmePage.text')}
-            </p>
-            <div style={ {width: '200px', height: '200px', backgroundImage: `url(${me})`, backgroundSize:'cover'}}></div>
-        </div>
+        <>
+            <h1 className="title">{t('aboutmePage.aboutmeTitle')}</h1>
+            <div className="about-me-content">
+                <p className="self-intro">
+                    {t('aboutmePage.text')}
+                </p>
+                <div className="my-img" style={{ backgroundImage: `url(${me})` }}></div>
+            </div>
+        </>
     )
 }

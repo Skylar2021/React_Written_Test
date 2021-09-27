@@ -14,9 +14,9 @@ export default function Setting({ handleisLogin, handleLngChange, handleNameChan
     }
     return (
         <div className="setting">
-            <h1>{t('settingPage.title')}</h1>
+            <h1 className="title">{t('settingPage.title')}</h1>
             <LngChangeButton handleLngChange={handleLngChange} />
-            <button onClick={() => handleLogOut()  }>
+            <button className="button" onClick={() => handleLogOut()  }>
                 {t('settingPage.logoutBtn')}
             </button>
         </div>

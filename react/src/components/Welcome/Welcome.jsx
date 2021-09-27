@@ -13,8 +13,8 @@ export default function Welcome({guestName,handleLngChange,isLogin}) {
         <div>
             {/* <Navbar isLogin={isLogin} handleLngChange={handleLngChange} /> */}
 
-            <h1>{t("welcomePage.welcome", {guestName})}</h1>
-            <p>{t('welcomePage.selfIntro')}</p>
+            <h1 className="title">{t("welcomePage.welcome")}</h1>
+            <p className="text-center">{t('welcomePage.selfIntro', {guestName} )}</p>
         </div>
     )
 }

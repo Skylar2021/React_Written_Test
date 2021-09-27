@@ -37,10 +37,11 @@ export default function Login({ handleNameChange, handleisLogin, name, handleLng
                 <img src={logo} className="App-logo" alt="logo" />
                 <h1>{t('loginPage.loginTitle')}</h1>
                 <label htmlFor="name">{t('loginPage.text')}</label>
-                <input type="text" id="name" onChange={({ target }) => nameChanged(target)} required></input>
+                <input className="input" type="text" id="name" onChange={({ target }) => nameChanged(target)} required></input>
                 <button
                     type="button"
                     value="Log in"
+                    className="button"
                     onClick={() => isValidInput()}
                     disabled={name ? false : true }
                     >

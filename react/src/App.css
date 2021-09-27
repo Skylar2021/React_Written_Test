@@ -6,19 +6,104 @@
   height: 40vmin;
   pointer-events: none;
 }
+.main-container{
+  background-image: url(./img/seaside1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* opacity: 0.5; */
+    font-size: 16px;
+    height: 100vh;
 
+}
+.bg-image{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -100;
+  /* opacity: 0.8; */
+  background-color: rgba(0, 0, 0, 0.308);
+
+}
+.title{
+  text-align: center;
+}
+.text-center{
+  text-align: center;
+
+}
+.input{
+	border-radius: 10px;
+  text-align: center;
+  height: 25px;
+  margin: 3px;
+}
 .button{
-  	background-color: #0040D6;
-	border-radius: 5;
-	justify-content: 'center';
-	align-items: 'center';
-	cursor: 'pointer';
-	padding-bottom: 3px;
+  background-color: #282c34b9;
+  /* opacity: 0.8; */
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 	height: 30px;
 	width: 100px;
 	margin: 3px;
+  color: #fff;
 }
 
+.button:hover{
+  background-color: #61dcfb;
+  border: inset;
+  color: #282c34;
+}
+
+nav.web-nav{
+  background-color: #282c34;
+
+  height: 25px;
+  position: sticky;
+  top: 0px;
+  padding-top: 2px;
+  font-size: 1.1rem;
+}
+
+nav.web-nav .nav-items{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+.nav-item{
+  color: #ffffff;
+}
+.about-me-content{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap-reverse;
+}
+
+.self-intro{
+  max-width: 60vw;
+  word-spacing: 2px;
+  word-wrap: break-word;
+  line-height: 2rem;
+  animation: leftright 0.5s;
+  animation-delay: 1s;
+
+}
+
+.about-me-content .my-img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.setting{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

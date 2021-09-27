@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route, Switch } from 'react-router';
-import { Link, Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Login from './components/Login/Login';
 import Welcome from './components/Welcome/Welcome';
 import Main from './components/Main/Main';
 import Navbar from './components/Navbar/Navbar'
-import i18n from 'i18next';
 import LngChangeButton from './components/LngChangeButton/LngChangeButton'
+import i18n from 'i18next';
 import './i18n'
 import About from './components/About/About';
 import NF from './components/404NF/NF';
 import Setting from './components/Setting/Setting';
+// import bgImage from './img/seaside1.jpg'
+
 
 
 
@@ -40,15 +42,16 @@ function App() {
 
     return (
         <>
-            <Navbar
-                isLogin={isLogin}
-                handleLngChange={handleLngChange}
-                handleisLogin={handleisLogin}
-                handleNameChange={handleNameChange} />
 
 
             {isLogin ?
-                <>
+                <div className="main-container">
+                    {/* <img className="bg-image" src={bgImage}/> */}
+                <Navbar
+                    isLogin={isLogin}
+                    handleLngChange={handleLngChange}
+                    handleisLogin={handleisLogin}
+                    handleNameChange={handleNameChange} />
                     <Switch>
                         <Route path="/home" >
                             <Welcome
@@ -66,7 +69,7 @@ function App() {
                             <NF />
                         </Route>
                     </Switch>
-                </>
+                </div>
                 :
                 <Switch>
                     <Route path="/" exact>
