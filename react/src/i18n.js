@@ -5,6 +5,7 @@ const translationEn = {
     link: {
         aboutMe: 'About',
         home: 'Home',
+        gallery: 'Gallery',
         setting:'Setting',
 
     },
@@ -15,7 +16,9 @@ const translationEn = {
     },
     welcomePage: {
         welcome: 'Welcome to My Website!',
-        selfIntro: 'Hello {{guestName}}~ I am Skylar. I built this website with React.',
+        greeting: 'Hello',
+        guestname:'{{guestName}}~',
+        selfIntro: 'I am Skylar. I built this website with React.',
     },
     aboutmePage: {
         aboutmeTitle: 'About Me',
@@ -24,9 +27,19 @@ const translationEn = {
         bring improvement to human life with innovation technology. I like taking photos(film), RPG game,
         coding, reading, hiking, eating, listening to music, writing diary, travelling, movies...`
     },
+    galleryPage:{
+        title: 'Gallery',
+        text:'Find out more on my instagram',
+
+    },
     settingPage:{
         title:'Setting',
         logoutBtn:'Log Out',
+    },
+    errorPage:{
+        title: '404: Not Found',
+        textForLogin: 'To Log In Page',
+        textForLogined: 'To Home Page',
     },
     engButton: 'English',
     canButton: 'Cantonese'
@@ -35,6 +48,7 @@ const translationCan = {
     link: {
         home: '主頁',
         aboutMe: '關於',
+        gallery: '相片',
         setting: '設定'
     },
     loginPage: {
@@ -44,16 +58,28 @@ const translationCan = {
     },
     welcomePage: {
         welcome: '歡迎你黎欣賞我嘅網頁！',
-        selfIntro: '你好 {{guestName}}~ 我係Skylar， 呢個網頁係用React整。',
+        greeting: '你好',
+        guestname:'{{guestName}}~',
+        selfIntro: '我係Skylar， 呢個網頁係用React整。',
     },
     aboutmePage: {
         aboutmeTitle: '關於我',
         text: `我係個友善有責任心嘅人，搵緊初級前端開發人員位置。我有一個抱負，希望我嘅工作能夠我嘅技能，成為推進社會積極進步嘅一個助力。
         我鍾意影菲林相、打(無聊)機、打code、睇書、行山、食野、聽歌、寫日記、去旅行、睇電影...等等。`
     },
+    galleryPage:{
+        title: '相片',
+        text:'按此繼續欣賞我嘅創作',
+
+    },
     settingPage:{
         title:'設定',
         logoutBtn:'登出',
+    },
+    errorPage:{
+        title: '404: 找不到位置',
+        textForLogin: '按此回到主頁',
+        textForLogined: '按此回到登入頁面',
     },
     engButton: '英文',
     canButton: '廣東話'
