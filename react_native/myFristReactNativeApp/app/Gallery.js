@@ -8,6 +8,16 @@ export default function Gallery() {
 			<Image style={styles.image} source={require('../assets/lightbulb.jpg')} fadeDuration={1000} />
 			<Image style={styles.image} source={require('../assets/tm_bridge.jpg')} fadeDuration={1000} />
 			<Image style={styles.image} source={require('../assets/sunset_back.jpg')} fadeDuration={1000} />
+
+			
+				{/* <>
+				<Gallery {...props} />
+				<TouchableOpacity style={styles.galleryBottom} onPress={() => { Linking.openURL('https://instagram.com/sw_share?utm_medium=copy_link') }}>
+					<Text style={styles.galleryText}>{t('galleryPage.text')}</Text>
+					<Ionicons name="logo-instagram" size={20} color="#8a3ab9" />
+				</TouchableOpacity>
+			</> */}
+			
 		</ScrollView>
 	)
 }
