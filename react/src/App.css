@@ -1,3 +1,45 @@
+*,
+body,
+html {
+  font-family: "Trebuchet MS", sans-serif;
+}
+.main-container {
+  background-image: url(./img/seaside1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-size: 16px;
+  height: 100vh;
+  overflow: hidden;
+}
+.title {
+  text-align: center;
+}
+.text-center {
+  text-align: center;
+}
+
+.button {
+  background-color: #282c34b9;
+  border-width: 3px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 30px;
+  width: 110px;
+  margin: 3px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #61dcfb;
+  border: inset;
+  color: #282c34;
+}
+
+/* login */
 .login-page {
   text-align: center;
 }
@@ -17,129 +59,169 @@
   height: 40vmin;
   pointer-events: none;
 }
-.main-container{
-  background-image: url(./img/seaside1.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* opacity: 0.5; */
-    font-size: 16px;
-    height: 100vh;
-    overflow: hidden;
-
-}
-.bg-image{
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  z-index: -100;
-  /* opacity: 0.8; */
-  background-color: rgba(0, 0, 0, 0.308);
-
-}
-.title{
-  text-align: center;
-}
-.text-center{
-  text-align: center;
-
-}
-.input{
+.input {
   color: #282c34;
-	border-radius: 10px;
+  border-radius: 10px;
   text-align: center;
+  width: 200px;
   height: 25px;
   margin: 3px;
 }
-.button{
-  background-color: #282c34b9;
-  /* opacity: 0.8; */
-	border-radius: 10px;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	height: 30px;
-	width: 100px;
-	margin: 3px;
-  color: #fff;
-}
 
-.button:hover{
-  background-color: #61dcfb;
-  border: inset;
-  color: #282c34;
-}
-.guest-name{
+.guest-name {
   font-style: italic;
 }
-nav.web-nav{
-  background-color: #282c34;
 
+/* navbar */
+nav.web-nav {
+  background-color: #282c349d;
+  height: max-content;
+}
+
+nav.web-nav .nav-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.nav-item {
+  flex: 1;
+  color: #ffffff;
+  text-align: center;
+  padding: 6px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.nav-item:hover {
+  background-color: #61dcfb;
+  color: #282c34;
+}
+nav.mobile-nav {
+  background-color: rgba(255, 255, 255, 0.5);
   height: 25px;
   position: sticky;
   top: 0px;
-  padding-top: 2px;
-  font-size: 1.1rem;
+  padding: 6px;
+  font-size: 1.3rem;
+  display: none;
 }
-
-nav.web-nav .nav-items{
+nav.mobile-nav .nav-icon {
+  padding: 0px 3px;
+  font-size: 1.5rem;
+}
+nav.mobile-nav .nav-icon:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 2px;
+  border: 1px dotted rgb(255, 255, 255);
+  cursor: pointer;
+}
+/* welcome page */
+.welcome-page {
+  padding: 10px;
+}
+/* about me */
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-me-content {
   display: flex;
   justify-content: space-around;
-  align-content: center;
-}
-.nav-item{
-  color: #ffffff;
-}
-.about-me-content{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 }
 
-.self-intro{
+.self-intro {
   max-width: 60vw;
   word-spacing: 2px;
   word-wrap: break-word;
   line-height: 2rem;
-  animation: leftright 0.5s;
-  animation-delay: 1s;
-
 }
 
-.about-me-content .my-img{
+.about-me-content .my-img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
   background-size: cover;
 }
+.github-link {
+  background-color: rgba(196, 182, 182, 0.527);
+  align-self: center;
+  width: 110px;
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 10px;
+}
+.github-link:hover {
+  background-color: #61dcfb;
+  color: #282c34;
+}
 
-.setting{
-  display:flex;
+/* setting */
+.setting {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.error-page{
+
+/* error page */
+.error-page {
   color: #282c34;
   text-align: center;
-
 }
 
-.error-link{
+.error-link {
   color: #282c34;
   text-align: center;
   text-decoration: underline;
 }
-.error-link:hover{
+.error-link:hover {
   color: #003eb9;
+}
+
+@media screen and (max-width: 650px) {
+  nav.web-nav {
+    background-color: #3c3e44;
+    height: 100vh;
+    width: 40vw;
+    position: fixed;
+    top: 37px;
+    left: -60%;
+    z-index: 100;
+  }
+  nav.mobile-nav {
+    display: block;
+  }
+  nav.web-nav .nav-items {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+  nav.web-nav .nav-item {
+    padding: 3px;
+  }
+  .about-me-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .about-me-content .my-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .self-intro {
+    max-width: 70vw;
+    word-spacing: normal;
+    line-height: 1.4rem;
+    text-align: justify;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   .react-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-
 
 @keyframes App-logo-spin {
   from {
