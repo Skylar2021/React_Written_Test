@@ -32,9 +32,9 @@ export default function Login({ handleNameChange, handleisLogin, name, handleLng
     }
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+        <div className="login-page">
+            <header className="login-content">
+                <img src={logo} className="react-logo" alt="logo" />
                 <h1>{t('loginPage.loginTitle')}</h1>
                 <label htmlFor="name">{t('loginPage.text')}</label>
                 <input className="input" type="text" id="name" onChange={({ target }) => nameChanged(target)} required></input>
