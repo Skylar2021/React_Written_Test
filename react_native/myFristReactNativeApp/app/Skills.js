@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     skillText:{
-
+        fontSize:16,
+        fontWeight:'bold',
     }
 })
