@@ -2,8 +2,6 @@ import React from 'react'
 import { StyleSheet, View, Text } from 'react-native';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
-
-
 export default function Skill() {
     return (
         <View styles={styles.skillContainer}>
@@ -64,15 +62,12 @@ const styles = StyleSheet.create({
     },
     skillIcon: {
         padding: 2,
-
-
-    }, skillText: {
-
     },
     reactNative: {
         backgroundColor: 'rgb(28, 30, 33)',
         borderRadius: 10,
+    },
+    skillText:{
 
     }
-
 })
