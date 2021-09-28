@@ -7,6 +7,7 @@ const translationEn = {
         home: 'Home',
         gallery: 'Gallery',
         setting:'Setting',
+        skill:'Skills',
     },
     loginPage: {
         loginTitle: 'Log In',
@@ -31,6 +32,9 @@ const translationEn = {
         text:'Find out more on my instagram',
 
     },
+    skillPage:{
+        title: 'Skills',
+    },
     settingPage:{
         title:'Setting',
         logoutBtn:'Log Out',
@@ -48,6 +52,7 @@ const translationCan = {
         home: '主頁',
         aboutMe: '關於',
         gallery: '相片',
+        skill:'技能',
         setting: '設定'
     },
     loginPage: {
@@ -70,6 +75,9 @@ const translationCan = {
         title: '相片',
         text:'按此繼續欣賞我嘅創作',
 
+    },
+    skillPage:{
+        title: '技能',
     },
     settingPage:{
         title:'設定',

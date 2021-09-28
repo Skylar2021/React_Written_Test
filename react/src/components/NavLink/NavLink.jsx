@@ -16,6 +16,10 @@ export default function NavLink({ toggleNav }) {
                 <i className="fas fa-smile nav-menu-icon"></i>
                 {t('link.aboutMe')}
             </Link>
+            <Link className="nav-item" to="/skills" onClick={() => toggleNav()}>
+            <i className="fas fa-laptop-code nav-menu-icon"></i>
+                {t('link.skill')}
+            </Link>
             <Link className="nav-item" to="/gallery" onClick={() => toggleNav()}>
                 <i className="fas fa-film nav-menu-icon"></i>
                 {t('link.gallery')}

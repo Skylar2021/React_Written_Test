@@ -12,6 +12,7 @@ import About from './components/About/About';
 import NF from './components/404NF/NF';
 import Setting from './components/Setting/Setting';
 import Gallery from './components/Gallery/Gallery';
+import Skill from './components/Skill/Skill';
 
 function App() {
     const { i18n } = useTranslation();
@@ -54,6 +55,9 @@ function App() {
                         </Route>
                         <Route path="/gallery">
                             <Gallery />
+                        </Route>
+                        <Route path="/skills">
+                            <Skill />
                         </Route>
                         <Route path="/setting">
                             <Setting handleNameChange={handleNameChange} handleisLogin={handleisLogin} handleLngChange={handleLngChange} />

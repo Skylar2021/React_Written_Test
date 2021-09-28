@@ -1,0 +1,62 @@
+.my-skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+
+.skill-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.skill{
+    margin: 5px;
+    padding: 5px;
+    width: 95px;
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.116);
+}
+
+.skill:hover{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.336);
+}
+
+i.skill-icon{
+    font-size: 50px;
+    margin: 5px;
+}
+
+.bootstrap{
+    color: #7952b3;
+}
+
+.html{
+    color: #e34c26;
+}
+
+.css{
+    color: #264de4;
+}
+
+.js{
+    color: #f0db4f;
+}
+
+.react{
+    color: rgb(97, 219, 251);
+}
+.react-native{
+    color: rgb(97, 219, 251);
+    background-color: black;
+    border-radius: 25%;
+    padding: 4px;
+}
