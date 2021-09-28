@@ -16,7 +16,7 @@ const translationEn = {
     },
     welcomePage: {
         welcome: 'Welcome!',
-        selfIntro: 'Hello {{guestName}}~ This is my first mobile application made by React Native^O^',
+        selfIntro: 'Hello {{guestName}}~ This is my first mobile application made by React Native',
         next: 'Next',
     },
     galleryPage: {
@@ -31,7 +31,7 @@ const translationEn = {
         text: 'Are you sure to log out??',
     },
     aboutmePage: {
-        title: 'I am Skylar :)',
+        title: 'I am Skylar',
         text: `A kind and responsible person who seeks an entry level front-end developer position where I can apply my knowledge in frontend web development and bring improvement to human life with innovation technology. I like taking photos(film), RPG game, coding, reading, hiking, eating, listening to music, writing diary, travelling, movies...`
     },
     engButton: 'English',
@@ -54,7 +54,7 @@ const translationCan = {
     },
     welcomePage: {
         welcome: '歡迎你！',
-        selfIntro: '你好 {{guestName}}~ 呢個手機應用程式用React Navtive整，係我第一個嘅手機應用程式^O^',
+        selfIntro: '你好 {{guestName}}~ 呢個手機應用程式用React Navtive整，係我第一個嘅手機應用程式',
         next: '進入主畫面',
 
     },
