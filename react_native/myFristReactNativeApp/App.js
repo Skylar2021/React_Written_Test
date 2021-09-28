@@ -9,6 +9,7 @@ import About from './app/About'
 import Login from './app/Login'
 import Setting from './app/Setting';
 import Welcome from './app/Welcome';
+import Skills from './app/Skills';
 
 export default function App() {
 	const Tab = createBottomTabNavigator();
@@ -42,6 +43,7 @@ export default function App() {
 		return (
 			<NavigationContainer>
 				<Tab.Navigator
+					// initialRouteName='Skills' // here
 					screenOptions={({ route }) => (
 						{
 							tabBarIcon: ({ focused, color, size }) => {
@@ -53,6 +55,13 @@ export default function App() {
 											color={color}
 										/>
 									);
+								} else if (route.name === 'Skills' || route.name === '技能') {
+									return (
+										<Ionicons
+											name={focused ? 'code-working' : 'code-working-outline'}
+											size={size}
+											color={color}
+										/>)
 								} else if (route.name === 'Setting' || route.name === '設定') {
 									return (
 										<Ionicons
@@ -69,6 +78,10 @@ export default function App() {
 					<Tab.Screen name={t('tab.about')} >
 						{props =>
 							<About {...props} titleText={t('aboutmePage.title')} selfIntro={t('aboutmePage.text')} />}
+					</Tab.Screen>
+					<Tab.Screen name={t('tab.skill')} >
+						{props =>
+							<Skills {...props} title={t('skillPage.title')} />}
 					</Tab.Screen>
 					<Tab.Screen name={t('tab.setting')} >
 						{props =>
@@ -115,7 +128,8 @@ export default function App() {
 const styles = StyleSheet.create({
 	mainContainer: {
 		flex: 1,
-		backgroundColor: '#fff',
 		paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+
 	},
+
 });

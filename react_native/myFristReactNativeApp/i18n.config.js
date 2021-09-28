@@ -6,7 +6,7 @@ const translationEn = {
         login: 'Log In',
         home: 'Home',
         about: 'About',
-        gallery: 'Gallery',
+        skill:'Skills',
         setting: 'Setting',
     },
     loginPage: {
@@ -16,11 +16,14 @@ const translationEn = {
     },
     welcomePage: {
         welcome: 'Welcome!',
-        selfIntro: 'Hello {{guestName}}~ I am Skylar. This is my first mobile application. I built this website with React Native.',
+        selfIntro: 'Hello {{guestName}}~ This is my first mobile application made by React Native^O^',
         next: 'Next',
     },
     galleryPage: {
         text: 'Find out more on my instagram',
+    },
+    skillPage:{
+        title: 'Skills',
     },
     settingPage: {
         settingTitle: 'Setting',
@@ -28,7 +31,7 @@ const translationEn = {
         text: 'Are you sure to log out??',
     },
     aboutmePage: {
-        title: 'I am...',
+        title: 'I am Skylar :)',
         text: `A kind and responsible person who seeks an entry level front-end developer position where I can apply my knowledge in frontend web development and bring improvement to human life with innovation technology. I like taking photos(film), RPG game, coding, reading, hiking, eating, listening to music, writing diary, travelling, movies...`
     },
     engButton: 'English',
@@ -40,6 +43,7 @@ const translationCan = {
         login: '登入',
         home: '主頁',
         gallery: '相片',
+        skill:'技能',
         about: '關於',
         setting: '設定',
     },
@@ -50,12 +54,15 @@ const translationCan = {
     },
     welcomePage: {
         welcome: '歡迎你！',
-        selfIntro: '你好 {{guestName}}~ 我係Skylar，呢個手機應用程式係用React Navtive整，係我第一個嘅手機應用程式。',
+        selfIntro: '你好 {{guestName}}~ 呢個手機應用程式用React Navtive整，係我第一個嘅手機應用程式^O^',
         next: '進入主畫面',
 
     },
     galleryPage: {
         text: '按此繼續欣賞我嘅創作',
+    },
+    skillPage:{
+        title: '技能',
     },
     settingPage: {
         logoutTitle: '設定',
@@ -63,8 +70,8 @@ const translationCan = {
         text: '真係走啦?',
     },
     aboutmePage: {
-        title: '',
-        text: `我係個友善有責任心嘅人，搵緊初級前端開發人員位置。我有一個抱負，希望我嘅工作能夠善用科技呢樣工具，成為推進社會積極進步嘅一個助力。我鍾意影菲林相、打(無聊)機、打code、睇書、行山、食野、聽歌、寫日記、去旅行、睇電影...等等。`,
+        title: '我係Skylar',
+        text: `一個友善有責任心嘅人，搵緊初級前端開發人員位置。我有一個抱負，希望我嘅工作能夠善用科技呢樣工具，成為推進社會積極進步嘅一個助力。我鍾意影菲林相、打(無聊)機、打code、睇書、行山、食野、聽歌、寫日記、去旅行、睇電影...等等。`,
     },
     engButton: '英文',
     canButton: '廣東話',
