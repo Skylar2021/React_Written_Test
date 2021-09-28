@@ -1,9 +1,9 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { View, Text, TextInput, StyleSheet, Platform, TouchableOpacity,StatusBar } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Platform, StatusBar, TouchableHighlight } from 'react-native';
 import LangBtn from './LangBtn';
 
-export default function Login({ guestName, handleNameChange,handleisLogin, title, text, handleLngChange,engBtnText,canBtnText }) {
+export default function Login({ guestName, handleNameChange, handleisLogin, title, text, handleLngChange, engBtnText, canBtnText }) {
 	return (
 		<View style={[styles.container, styles.loginBG]}>
 			<Text style={styles.loginTitle}>{title}</Text>
@@ -12,11 +12,13 @@ export default function Login({ guestName, handleNameChange,handleisLogin, title
 				value={guestName}
 				onChangeText={text => handleNameChange(text)}
 				style={styles.input} />
-			<TouchableOpacity style={styles.loginBtn} onPress={() => handleisLogin(true)} disabled={guestName ? false : true}>
-				<Ionicons name="log-in" size={28} color="white" />
-				<Text style={{ color: '#fff', fontWeight: '500' }}>{title}</Text>
-			</TouchableOpacity>
-			<LangBtn handleLngChange={handleLngChange} engBtnText={engBtnText} canBtnText={canBtnText}/>
+			<TouchableHighlight underlayColor='#002782' style={styles.loginBtn} onPress={() => handleisLogin(true)} disabled={guestName ? false : true}>
+				<>
+					<Ionicons name="log-in" size={28} color="white" />
+					<Text style={styles.loginBtnText}>{title}</Text>
+				</>
+			</TouchableHighlight>
+			<LangBtn handleLngChange={handleLngChange} engBtnText={engBtnText} canBtnText={canBtnText} />
 		</View>
 	)
 }
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	loginBG: {
-		backgroundColor: 'rgba(0,0,0, 0.7)',
+		backgroundColor: 'rgba(0,0,0, 0.6)',
 	},
 	loginTitle: {
 		fontSize: 25,
@@ -55,6 +57,11 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 		width: 100,
 		height: 30,
+	},
+	loginBtnText:{
+		 color: '#fff', 
+		 fontWeight: '600',
+		 fontSize:16,
 	},
 	input: {
 		textAlign: 'center',
