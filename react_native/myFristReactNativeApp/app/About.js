@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import {StyleSheet, View, Text} from 'react-native'
 
 export default class About extends Component {
-    constructor({titleText, selfIntro}){
-        super({titleText, selfIntro})
+    constructor(props){
+        super(props)
         this.state = {
-            title: titleText,
-            text: selfIntro
+            title: this.propstitleText,
+            text: this.props.selfIntro
         }
     }
     render() {
@@ -24,6 +24,7 @@ export default class About extends Component {
 const styles = StyleSheet.create({
     aboutContainer:{
 		padding: 15,
+		
 	},
 	aboutTitle:{
 		fontSize: 25,
@@ -36,5 +37,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#FFFFFF',
 		padding: 5,
 		borderRadius: 10,
+		height: '70vh',
 	},
 })

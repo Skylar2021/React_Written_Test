@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput, SafeAreaView, Platform, StatusBar, ImageBackground, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import * as Linking from 'expo-linking';
+// import * as Linking from 'expo-linking';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 
-import Gallery from './app/Gallery'
+// import Gallery from './app/Gallery'
 import About from './app/About'
+import Login from './app/Login'
+import LangBtn from './app/LangBtn'
 import i18next from './i18n.config';
+import Setting from './app/Setting';
+import Welcome from './app/Welcome';
 
 export default function App() {
 	const Tab = createBottomTabNavigator();
 	const { t, i18n } = useTranslation();
+
 	const [isAble, setIsAble] = useState(false);
+	const handleIsAble = (status) => {
+		return setIsAble(status)
+	}
+
 
 	const handleLngChange = (code) => {
 		i18n.changeLanguage(code)
@@ -24,7 +33,7 @@ export default function App() {
 		return setGuestName(text)
 	}
 
-	const [isLogin, setisLogin] = useState(true)
+	const [isLogin, setisLogin] = useState(false)
 	const handleisLogin = (status) => {
 		if (status) {
 			return setisLogin(status)
@@ -34,25 +43,7 @@ export default function App() {
 		}
 	}
 
-	const LangBtn = () => {
-		let currentLang = i18next.language
-		if (currentLang === 'en') {
-			return <Pressable style={styles.btnStyle} title={t('canButton')} onPress={() => handleLngChange('can')} ><Text style={styles.btnText}>{t('canButton')}</Text></Pressable>
-		} else {
-			return <Pressable style={styles.btnStyle} title={t('engButton')} onPress={() => handleLngChange('en')} ><Text style={styles.btnText}>{t('engButton')}</Text></Pressable>
-		}
-	}
-
-	// const About = ({titleText, selfIntro}) =>{
-	// 	return (
-	// 		<>
-	// 			<View style={styles.aboutContainer}>
-	// 				<Text style={styles.aboutTitle}>{titleText}</Text>
-	// 				<Text style={styles.aboutText}>{selfIntro}</Text>
-	// 			</View>
-	// 		</>
-	// 	)
-	// }
+	let currentLang = i18next.language
 
 	const MainContent = () => {
 		return (
@@ -88,48 +79,41 @@ export default function App() {
 					</Tab.Screen>
 					<Tab.Screen name={t('tab.setting')} >
 						{props =>
-							<View style={styles.container}>
-								<Pressable style={styles.btnStyle} onPress={() => handleisLogin(false)}>
-									<Text style={styles.btnText}>{t('settingPage.logoutBtn')}</Text>
-								</Pressable>
-								{LangBtn()}
-							</View>}
+								<Setting 
+									logOutBtnText={t('settingPage.logoutBtn')}
+									engBtnText={t('engButton')}
+									canBtnText={t('canButton')}
+									handleLngChange={handleLngChange}
+									handleisLogin={handleisLogin}
+									/>
+							}
 					</Tab.Screen>
 				</Tab.Navigator>
 			</NavigationContainer>
 		)
 	}
 
-	const WelcomePage = () => {
-		return (
-			<ImageBackground source={require('./assets/sea.jpg')} resizeMode="cover" style={styles.bgimage}>
-				<Text style={styles.welcomeText}>
-					{t('welcomePage.selfIntro', { guestName })}
-				</Text>
-				<Pressable style={styles.btnStyle} onPress={() => setIsAble(true)}>
-					<Text style={styles.btnText}>{t('welcomePage.next')}</Text>
-				</Pressable>
-			</ImageBackground>
-		)
-	}
-
 	return (
 		<SafeAreaView style={styles.mainContainer}>
-			{isLogin ? isAble ? <MainContent /> : <WelcomePage />
-				:
-				<View style={[styles.container, styles.loginBG]}>
-					<Text style={styles.loginTitle}>{t('loginPage.loginTitle')}</Text>
-					<Text style={styles.loginText}>{t('loginPage.text')}</Text>
-					<TextInput
-						value={guestName}
-						onChangeText={text => handleNameChange(text)}
-						style={styles.input} />
-					<TouchableOpacity style={styles.loginBtn} onPress={() => handleisLogin(true)} disabled={guestName ? false : true}>
-						<Ionicons name="log-in" size={28} color="white" />
-						<Text style={{ color: '#fff', fontWeight: '500' }}>{t('loginPage.loginTitle')}</Text>
-					</TouchableOpacity>
-					{!isLogin && LangBtn()}
-				</View>}
+			{isLogin ? isAble ? 
+			<MainContent /> : 
+			<Welcome 
+				handleIsAble={handleIsAble}
+				guestName={guestName}
+				text={t('welcomePage.selfIntro', { guestName })}
+				homeBtnText={t('welcomePage.next')}
+				/> :
+					<Login 
+						guestName={guestName} 
+						handleNameChange={handleNameChange} 
+						handleLngChange={handleLngChange}
+						handleisLogin={handleisLogin}
+						title={t('loginPage.loginTitle')}
+						text={t('loginPage.text')}
+						engBtnText={t('engButton')}
+						canBtnText={t('canButton')}
+						/>
+			}
 		</SafeAreaView>
 	);
 }
