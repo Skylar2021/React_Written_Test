@@ -6,8 +6,8 @@ const translationEn = {
         aboutMe: 'About',
         home: 'Home',
         gallery: 'Gallery',
-        setting:'Setting',
         skill:'Skills',
+        setting:'Setting',
     },
     loginPage: {
         loginTitle: 'Log In',
