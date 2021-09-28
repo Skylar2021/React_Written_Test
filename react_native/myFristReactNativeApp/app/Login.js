@@ -3,9 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { View, Text, TextInput, StyleSheet, Platform, TouchableOpacity,StatusBar } from 'react-native';
 import LangBtn from './LangBtn';
 
-
 export default function Login({ guestName, handleNameChange,handleisLogin, title, text, handleLngChange,engBtnText,canBtnText }) {
-
 	return (
 		<View style={[styles.container, styles.loginBG]}>
 			<Text style={styles.loginTitle}>{title}</Text>
@@ -32,7 +30,6 @@ const styles = StyleSheet.create({
 	},
 	loginBG: {
 		backgroundColor: 'rgba(0,0,0, 0.7)',
-		// opacity: 0.7,
 	},
 	loginTitle: {
 		fontSize: 25,

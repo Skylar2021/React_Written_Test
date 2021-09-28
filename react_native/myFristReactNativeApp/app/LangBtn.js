@@ -2,7 +2,6 @@ import React from 'react'
 import {Pressable, Text, StyleSheet } from 'react-native'
 import i18next from '../i18n.config';
 
-
 export default function LangBtn({engBtnText, canBtnText,handleLngChange}) {
 	let currentLang = i18next.language
 

@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
 		height: 30,
 		width: 100,
 		margin: 3,
-        
 	},
 	btnText: {
 		color: '#fff',

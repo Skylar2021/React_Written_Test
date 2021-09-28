@@ -1,42 +1,33 @@
-import React, { Component } from 'react'
-import {StyleSheet, View, Text} from 'react-native'
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
 
-export default class About extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            title: this.propstitleText,
-            text: this.props.selfIntro
-        }
-    }
-    render() {
-        return (
-            
-                <View style={styles.aboutContainer}>
-					<Text style={styles.aboutTitle}>{this.state.title}</Text>
-					<Text style={styles.aboutText}>{this.state.text}</Text>
-				</View>
-           
-        )
-    }
+const About = ({ titleText, selfIntro }) => {
+	return (
+		<View style={styles.aboutContainer}>
+			<Text style={styles.aboutTitle}>{titleText}</Text>
+			<Text style={styles.aboutText}>{selfIntro}</Text>
+		</View>
+	)
 }
 
 const styles = StyleSheet.create({
-    aboutContainer:{
+	aboutContainer: {
 		padding: 15,
-		
 	},
-	aboutTitle:{
+	aboutTitle: {
 		fontSize: 25,
 		fontWeight: '600',
 		margin: 10,
 		color: 'black',
 	},
-	aboutText:{
-		fontSize: 18,
+	aboutText: {
 		backgroundColor: '#FFFFFF',
-		padding: 5,
+		padding: 20,
+		margin: 5,
 		borderRadius: 10,
-		height: '70vh',
+		height: '100%',
+		textAlign:'justify',
 	},
 })
+
+export default About

@@ -1,10 +1,7 @@
 import React from 'react'
 import { StyleSheet, ImageBackground, Text, Pressable } from 'react-native'
 
-
-const Welcome = ({ guestName, handleIsAble, text, homeBtnText }) => {
-
-
+const Welcome = ({ handleIsAble, text, homeBtnText }) => {
     return (
         <ImageBackground source={require('../assets/sea.jpg')} resizeMode="cover" style={styles.bgimage}>
             <Text style={styles.welcomeText}>
@@ -15,7 +12,6 @@ const Welcome = ({ guestName, handleIsAble, text, homeBtnText }) => {
             </Pressable>
         </ImageBackground>
     )
-
 }
 
 const styles = StyleSheet.create({
