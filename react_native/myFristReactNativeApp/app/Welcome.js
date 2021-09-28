@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingBottom: 3,
-        height: 30,
-        width: 100,
+        height: 35,
+        width: 125,
         margin: 3,
     },
     btnText: {
