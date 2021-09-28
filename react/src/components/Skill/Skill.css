@@ -56,7 +56,7 @@ i.skill-icon{
 }
 .react-native{
     color: rgb(97, 219, 251);
-    background-color: black;
+    background-color: rgb(28, 30, 33);
     border-radius: 25%;
     padding: 4px;
 }
