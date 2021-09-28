@@ -5,11 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 
-import About from './app/About'
 import Login from './app/Login'
-import Setting from './app/Setting';
 import Welcome from './app/Welcome';
+import About from './app/About'
 import Skills from './app/Skills';
+import Setting from './app/Setting';
 
 export default function App() {
 	const Tab = createBottomTabNavigator();
@@ -43,7 +43,6 @@ export default function App() {
 		return (
 			<NavigationContainer>
 				<Tab.Navigator
-					// initialRouteName='Skills' // here
 					screenOptions={({ route }) => (
 						{
 							tabBarIcon: ({ focused, color, size }) => {
@@ -51,7 +50,7 @@ export default function App() {
 									return (
 										<Ionicons
 											name={focused ? 'person' : 'person-outline'}
-											size={size}
+											size={20}
 											color={color}
 										/>
 									);
@@ -59,22 +58,38 @@ export default function App() {
 									return (
 										<Ionicons
 											name={focused ? 'code-working' : 'code-working-outline'}
-											size={size}
+											size={20}
 											color={color}
 										/>)
 								} else if (route.name === 'Setting' || route.name === '設定') {
 									return (
 										<Ionicons
 											name={focused ? 'settings' : 'settings-outline'}
-											size={size}
+											size={20}
 											color={color}
 										/>)
 								}
 							},
 							tabBarActiveTintColor: '#0040D6',
 							tabBarInactiveTintColor: 'black',
+							tabBarStyle: {
+								height:48,
+								backgroundColor: 'lightgray',
+							},
+							headerTitleStyle: {
+								fontWeight: 'bold',
+								fontSize:28,
+								textAlign:'center',
+							  },
+							  headerTintColor: '#fff',
+							  headerStyle: {
+								backgroundColor: '#0040D6',
+								height:48,
+							  },
+							  tabBarLabelStyle:{
+								  fontSize:15
+							  }
 						})}>
-
 					<Tab.Screen name={t('tab.about')} >
 						{props =>
 							<About {...props} titleText={t('aboutmePage.title')} selfIntro={t('aboutmePage.text')} />}
@@ -107,6 +122,7 @@ export default function App() {
 				<Welcome
 					handleIsAble={handleIsAble}
 					guestName={guestName}
+					title={t('welcomePage.welcome')}
 					text={t('welcomePage.selfIntro', { guestName })}
 					homeBtnText={t('welcomePage.next')}
 				/> :
@@ -129,7 +145,5 @@ const styles = StyleSheet.create({
 	mainContainer: {
 		flex: 1,
 		paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-
 	},
-
 });
